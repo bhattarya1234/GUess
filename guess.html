@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-color: black;
+            background: url("cover.jpg") repeat center/cover;
+     user-select: none;
+            display: flex;
+    align-items: center;
+   justify-content: center;
+justify-items: center;
+text-align: center;
+overflow: hidden;
+            height:100vh;
+            width: 100%; 
+          }
+
+        #input,#cointainer{
+            display: flex;
+    align-items: center;
+   justify-content: center;
+
+text-align: center;
+overflow: hidden;
+
+       }
+       
+        #cointainer{
+    position: relative;
+    height: 60vh;
+            width: 50vh;
+background: transparent;
+background:rgba(255, 255, 255, 0);
+backdrop-filter: blur(11px);
+border-radius: 11px;
+}
+  #input{
+    
+            height: 10vh;
+            width: 30vh;
+    border-radius: 11px;
+    background:rgb(72, 63, 63);
+   color:rgb(0, 67, 250);
+font-size: 4vh;
+caret-color: rgb(5, 5, 255);
+text-shadow: 1px 1px 0 rgb(56, 255, 56),
+0 1px 0 rgb(21, 21, 255), 
+2px 0 0 red;
+}
+#show{
+    position: absolute;
+    bottom:0;
+    color: red;
+    font-size:5vh;
+}
+#top{
+    position: absolute;
+    top: 0;
+    font-size: 7vh;
+    text-shadow: 1px 1px 0 blue,
+    -1px 1px 0 red,
+    1px -1px 0 green,
+    -1px -1px 0 yellow;
+}
+#btn{
+    position: absolute;
+    border:none;
+    display:flex;
+    margin-top: 50%;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgb(0, 13, 255),
+    0 0 20px rgb(0, 13, 255);
+    background: rgb(0, 13, 255);
+    padding: 5px;
+    font-size: 4vh;
+}
+    </style>
+    
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the number</title>
+</head>
+<body>
+   
+        <div id="cointainer">
+            <div id="top">Guess</div>
+            <input type="number" id="input" placeholder="Enter a number">
+      
+         <button id="btn">Submit</button>
+            <div id="show"></div>  
+    </div>
+    
+    <script>
+       
+    
+       confirm("Uploading new gains at XYZ Gym, or are you already part of the system?");
+       const button=document.getElementById("btn");
+        const cointainer=document.getElementById("cointainer");
+    let i =document.getElementById("input");
+    
+    let rand = Math.floor(Math.random() * 100) + 1;
+    const show=document.getElementById("show");
+    button.addEventListener("click",
+    function(){
+       let input = parseInt(i.value); 
+if(rand>input){
+    val="Too low";
+    message="Try again 😔";
+}
+else if(rand<input){
+    val="Too high";
+    message="Try again 😔";
+    
+}else{
+val="Correct";
+message="Congratulation you win 🏆";
+cointainer.textContent='🏆';
+cointainer.classList.add('font-size');
+cointainer.style.fontSize = '10vh';
+
+
+}
+
+console.log(message);
+alert(message);
+show.textContent=`${val}`;
+    }
+    );
+    
+
+    </script>
+ 
+</body>
+</html>
